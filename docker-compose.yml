@@ -26,7 +26,7 @@ services:
     image: mysql:5
     environment:
       MYSQL_DATABASE: my_store
-      MYSQL_USER: cfcode92
+      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: cfcode92
       MY_SQL_PORT: 3306
     ports:
@@ -38,8 +38,6 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       MYSQL_ROOT_PASSWORD: cfcode92
-      MYSQL_USER: cfcode92
-      MYSQL_PORT: 3306
       PMA_HOST: mysql
     ports:
       - 8080:80
