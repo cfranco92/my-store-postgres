@@ -59,3 +59,7 @@ $ docker-compose down
   )
 ```
 
+## MIGRATIONS - SEQUELIZE-CLI
+```terminal
+  $ npm run migrations:generate create-user
+```
