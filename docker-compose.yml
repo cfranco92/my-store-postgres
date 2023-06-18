@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   postgres:
@@ -21,3 +21,25 @@ services:
       - 5050:80
     volumes:
       - ./pgadmin-data:/var/lib/pgadmin
+
+  mysql:
+    image: mysql:5
+    environment:
+      MYSQL_DATABASE: my_store
+      MYSQL_USER: cfcode92
+      MYSQL_ROOT_PASSWORD: cfcode92
+      MY_SQL_PORT: 3306
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: cfcode92
+      MYSQL_USER: cfcode92
+      MYSQL_PORT: 3306
+      PMA_HOST: mysql
+    ports:
+      - 8080:80
