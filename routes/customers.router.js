@@ -14,7 +14,8 @@ const service = new CustomerService();
 
 router.get('/', async (req, res, next) => {
   try {
-    res.json(await service.find());
+    const customers = await service.find();
+    res.json(customers);
   } catch (error) {
     next(error);
   }
